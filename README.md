@@ -1,0 +1,1 @@
+# fastapi-seminar-assignment6
