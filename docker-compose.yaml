@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  wapang:
+    image: ericsong2004/wapang:latest
+    # build: .
+    container_name: wapang
+    env_file:
+      - .env.prod
+    ports:
+      - "8000:8080"
+    command: sh -c "uv run alembic upgrade head && uv run uvicorn wapang.main:app --host 0.0.0.0 --port 8080"
+    restart: always
